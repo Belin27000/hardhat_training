@@ -7,6 +7,9 @@ pragma solidity >=0.8.2 <0.9.0;
  * @dev Store & retrieve value in a variable
  * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
  */
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
 contract SimpleStorage {
     uint256 number;
     uint private locktime;
