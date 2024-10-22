@@ -9,6 +9,11 @@ pragma solidity >=0.8.2 <0.9.0;
  */
 contract SimpleStorage {
     uint256 number;
+    uint private locktime;
+
+    constructor(uint _lockTime) {
+        locktime = _lockTime;
+    }
 
     /**
      * @dev Store value in variable

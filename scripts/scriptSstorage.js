@@ -7,13 +7,15 @@
 const hre = require("hardhat");
 
 async function main() {
+    const currentTimestampInSeconds = Math.round(Date.now() / 1000);
+    const unlockTime = currentTimestampInSeconds + 60;
 
-    const lock = await hre.ethers.deployContract("SimpleStorage");
+    const SimpleStorage = await hre.ethers.deployContract("SimpleStorage", [unlockTime]);
 
-    await lock.waitForDeployment();
+    await SimpleStorage.waitForDeployment();
 
     console.log(
-        `SimpleStorage with 0 ETH and no unlock timestamp deployed to ${lock.target}`
+        `SimpleStorage with 0 ETH and no unlock timestamp ${unlockTime} deployed to ${SimpleStorage.target}`
     );
 }
 
