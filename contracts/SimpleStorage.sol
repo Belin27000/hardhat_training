@@ -12,11 +12,11 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract SimpleStorage {
     uint256 number;
-    uint private locktime;
+    // uint private locktime;
 
-    constructor(uint _lockTime) {
-        locktime = _lockTime;
-    }
+    // constructor(uint _lockTime) {
+    //     locktime = _lockTime;
+    // }
 
     /**
      * @dev Store value in variable
